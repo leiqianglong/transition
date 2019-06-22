@@ -17,7 +17,6 @@
 		25DD9DFB22BDCCB200D31590 /* PrsentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DD9DF922BDCCB200D31590 /* PrsentViewController.xib */; };
 		25DD9DFF22BDCDDF00D31590 /* LQPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DD9DFE22BDCDDF00D31590 /* LQPresentationController.m */; };
 		25DD9E0222BDE4D200D31590 /* LQPresentationManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DD9E0122BDE4D200D31590 /* LQPresentationManger.m */; };
-		25DD9E6B22BE07A400D31590 /* Stutent.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DD9E6A22BE07A400D31590 /* Stutent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +37,6 @@
 		25DD9DFE22BDCDDF00D31590 /* LQPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LQPresentationController.m; sourceTree = "<group>"; };
 		25DD9E0022BDE4D200D31590 /* LQPresentationManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LQPresentationManger.h; sourceTree = "<group>"; };
 		25DD9E0122BDE4D200D31590 /* LQPresentationManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LQPresentationManger.m; sourceTree = "<group>"; };
-		25DD9E6922BE07A400D31590 /* Stutent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stutent.h; sourceTree = "<group>"; };
-		25DD9E6A22BE07A400D31590 /* Stutent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stutent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +76,6 @@
 				25DD9DE522BDCC2A00D31590 /* ViewController.m */,
 				25DD9DF722BDCCB200D31590 /* PrsentViewController.h */,
 				25DD9DF822BDCCB200D31590 /* PrsentViewController.m */,
-				25DD9E6922BE07A400D31590 /* Stutent.h */,
-				25DD9E6A22BE07A400D31590 /* Stutent.m */,
 				25DD9DF922BDCCB200D31590 /* PrsentViewController.xib */,
 				25DD9DE722BDCC2A00D31590 /* Main.storyboard */,
 				25DD9DEA22BDCC2B00D31590 /* Assets.xcassets */,
@@ -179,7 +174,6 @@
 				25DD9DF122BDCC2B00D31590 /* main.m in Sources */,
 				25DD9DE322BDCC2A00D31590 /* AppDelegate.m in Sources */,
 				25DD9DFF22BDCDDF00D31590 /* LQPresentationController.m in Sources */,
-				25DD9E6B22BE07A400D31590 /* Stutent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
