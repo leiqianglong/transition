@@ -34,10 +34,25 @@
 - (IBAction)showWindow:(id)sender {
     
     UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = [UIColor purpleColor];
+    vc.view.backgroundColor = [UIColor whiteColor];
     //自定义转场动画
     self.manger.type = 1;
     self.manger.rect = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-300, [UIScreen mainScreen].bounds.size.width, 300);
+    
+    //添加遮罩
+    //得到view的遮罩路径
+    CGSize rsize = CGSizeMake(6,6);
+    CGRect sRect = CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, self.view.bounds.size.height);
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:sRect byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:rsize];
+    
+    //创建 layer
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = sRect;
+    //赋值
+    maskLayer.path = maskPath.CGPath;
+    vc.view.layer.mask = maskLayer;
+
+    
     //设置代理
     vc.transitioningDelegate = self.manger;
     //设置转场动画样式
