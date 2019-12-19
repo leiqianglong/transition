@@ -47,25 +47,43 @@
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     if (toView) {
         [transitionContext.containerView addSubview:toView];
-        //设置锚点
-        toView.layer.anchorPoint = CGPointMake(0.5, 0);
-        toView.transform = CGAffineTransformMakeScale(1, 0.00001);
-        [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
-            toView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];//必须告诉系统动画完成
-        }];
+        if (self.type == 0) {
+            //设置锚点
+            toView.layer.anchorPoint = CGPointMake(0.5, 0);
+            toView.transform = CGAffineTransformMakeScale(1, 0.00001);
+            [UIView animateWithDuration:[self transitionDuration:transitionContext]  animations:^{
+                toView.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];//必须告诉系统动画完成
+            }];
+        }else{
+            toView.transform = CGAffineTransformMakeTranslation(0.01, [UIScreen mainScreen].bounds.size.width);
+            [UIView animateWithDuration:0.25 animations:^{
+                toView.transform = CGAffineTransformMakeTranslation(0.01, 0.01);
+            } completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];//必须告诉系统动画完成
+            }];
+        }
     }
 }
 -(void)viewDismiss:(id<UIViewControllerContextTransitioning>)transitionContext{
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     if (fromView) {
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            
-            fromView.transform = CGAffineTransformMakeScale(1, 0.00001);
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];//必须告诉系统动画完成
-        }];
+        if (self.type == 0) {
+            [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+                
+                fromView.transform = CGAffineTransformMakeScale(1, 0.00001);
+            } completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];//必须告诉系统动画完成
+            }];
+        }else{
+            [UIView animateWithDuration:0.25 animations:^{
+                fromView.transform = CGAffineTransformMakeTranslation(0.01, [UIScreen mainScreen].bounds.size.height);
+            } completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];//必须告诉系统动画完成
+            }];
+        }
+     
     }
 }
 @end

@@ -23,6 +23,21 @@
 - (IBAction)customerPresnet:(UIButton *)sender {
     PrsentViewController *vc = [[PrsentViewController alloc]init];
     //自定义转场动画
+    self.manger.type = 0;
+    self.manger.rect = CGRectMake(100, 50, 200, 300);
+    //设置代理
+    vc.transitioningDelegate = self.manger;
+    //设置转场动画样式
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)showWindow:(id)sender {
+    
+    UIViewController *vc = [[UIViewController alloc]init];
+    vc.view.backgroundColor = [UIColor purpleColor];
+    //自定义转场动画
+    self.manger.type = 1;
+    self.manger.rect = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-300, [UIScreen mainScreen].bounds.size.width, 300);
     //设置代理
     vc.transitioningDelegate = self.manger;
     //设置转场动画样式
@@ -34,7 +49,7 @@
     if (!_manger) {
         _manger = [[LQPresentationManger alloc]init];
         //设置弹出视图的尺寸
-        _manger.rect = CGRectMake(100, 50, 200, 300);
+      
     }
     return _manger;
 }

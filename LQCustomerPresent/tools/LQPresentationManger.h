@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LQPresentationManger : NSObject<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
 @property(nonatomic,assign)CGRect rect;
+@property(nonatomic,assign)NSInteger type; //样式 0 -1
 @end
 
 NS_ASSUME_NONNULL_END
